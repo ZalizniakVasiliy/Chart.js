@@ -2,7 +2,6 @@ import users from "./users_with_rating.js";
 
 console.log(users);
 
-const labels = users;
 const data = {
     labels: users.map(item => {
         const getFullName = () => {
@@ -13,7 +12,7 @@ const data = {
     datasets: [
         {
             label: 'Success indicator',
-            data: users,
+            data: users.map(user => user.rating),
             borderColor: 'red',
             backgroundColor: 'hsl(0, 100%, 50%, 0.5)',
             borderWidth: 2,
@@ -22,7 +21,7 @@ const data = {
         },
         {
             label: 'Current rating',
-            data: users,
+            data: users.map(user => user.rating),
             borderColor: 'blue',
             backgroundColor: 'hsl(250, 100%, 50%, 0.5)',
             borderWidth: 2,
